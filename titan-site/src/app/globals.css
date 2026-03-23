@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-navy: #1B263B;
+  --color-navy-90: rgba(27, 38, 59, 0.9);
+  --color-steel: #545e76;
+  --color-surface: #f9faf5;
+  --color-surface-dim: #f2f4ef;
+  --color-container: #ebefe9;
+  --color-container-high: #e4eae2;
+  --color-success: #2e6b4f;
+  --color-error: #9f403d;
+  --color-accent: #d7e2ff;
+
+  /* Typography */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+
+  /* Spacing */
+  --spacing-section: clamp(4rem, 10vw, 8rem);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-in: scale-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-navy);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+::selection {
+  background-color: var(--color-navy);
+  color: white;
+}
+
+/* Spacing utility */
+.py-section {
+  padding-top: clamp(4rem, 10vw, 8rem);
+  padding-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+/* Animation delays */
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+
+/* Start invisible for animated elements */
+.animate-fade-up {
+  opacity: 0;
+}

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m http.server 8080)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(npx create-next-app@latest titan-site --typescript --tailwind --app --src-dir --no-eslint --import-alias \"@/*\" --use-npm)",
+      "Bash(npx create-next-app@latest titan-site --typescript --tailwind --app --src-dir --no-eslint --import-alias \"@/*\" --use-npm --turbopack)",
+      "Bash(printf 'n\\\\nn\\\\n')",
+      "Bash(yes \"n\")",
+      "Bash(mkdir -p src/components src/lib public/assets)",
+      "Bash(cp \"../assets/images/logo-clean.png\" public/assets/logo.png)",
+      "Bash(cd:*)",
+      "Bash(npx next:*)",
+      "Bash(rm -f index.html shop.html about.html stacks.html product.html)",
+      "Bash(rm -rf css js assets)",
+      "Bash(npm install:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(npx kill-port:*)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(npm run:*)",
+      "Bash(pip install:*)",
+      "Bash(find 'C:/Users/daria/TITAN Performance' -maxdepth 3 -name *transparent* -o -name *nobg* -o -name *no-bg* -o -name *_t.* -o -name *-t.*)",
+      "Bash(find 'C:/Users/daria/TITAN Performance' -maxdepth 4 -name *.png -o -name *.webp -o -name *.jpg -o -name *.jpeg)",
+      "Bash(find 'C:/Users/daria/TITAN Performance/claude-seo' -type f -name *.png -o -name *.webp -o -name *.jpg)"
+    ]
+  }
+}
