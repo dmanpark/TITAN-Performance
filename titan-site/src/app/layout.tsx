@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${manrope.variable}`}
     >
-      <body>
+      <body suppressHydrationWarning>
         <CartProvider>
           <Navbar />
           <main className="flex-1">{children}</main>
