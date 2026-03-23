@@ -69,7 +69,7 @@ export default function ProductActions({
         </div>
         <button
           onClick={() => cart.add(product.id, qty)}
-          className="bg-navy text-white font-heading font-bold uppercase tracking-[0.15em] text-xs px-12 py-[1.375rem] hover:opacity-90 transition-opacity active:scale-[0.97]"
+          className="bg-navy text-white font-heading font-bold uppercase tracking-[0.15em] text-xs px-12 py-[1.375rem] transition-all duration-300 ease-out hover:shadow-[0_6px_24px_rgba(27,38,59,0.25)] hover:scale-[1.03] active:scale-[0.97]"
         >
           Add to Cart
         </button>

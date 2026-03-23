@@ -9,6 +9,8 @@ import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, getProductBySlug } from "@/lib/data";
 import ProductHero from "./ProductHero";
 import ProductTabsClient from "./ProductTabs";
+import ProductShell from "./ProductShell";
+import ScrollReveal from "./ScrollReveal";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -59,7 +61,7 @@ export default async function ProductPage({ params }: PageProps) {
   const crossSell = PRODUCTS.filter((p) => p.id !== product.id).slice(0, 3);
 
   return (
-    <>
+    <ProductShell productId={product.id} accentColor={product.color}>
       {/* Breadcrumb */}
       <Section className="!pt-6 !pb-0">
         <Container>
@@ -90,26 +92,30 @@ export default async function ProductPage({ params }: PageProps) {
       {/* Benefits */}
       <Section variant="dim">
         <Container>
-          <SectionHeader label="Why It Works" title="Key Benefits" />
+          <ScrollReveal>
+            <SectionHeader label="Why It Works" title="Key Benefits" />
+          </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {product.benefits.map((b) => (
-              <div key={b.title} className="flex flex-col gap-3">
-                <div className="w-12 h-12 flex items-center justify-center bg-navy/5 mb-2">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="#1B263B"
-                    strokeWidth="2"
-                  >
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
+            {product.benefits.map((b, i) => (
+              <ScrollReveal key={b.title} delay={i * 100}>
+                <div className="flex flex-col gap-3 group/benefit">
+                  <div className="w-12 h-12 flex items-center justify-center bg-navy/5 mb-2 transition-all duration-300 group-hover/benefit:bg-navy/10 group-hover/benefit:scale-105">
+                    <svg
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="#1B263B"
+                      strokeWidth="2"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                  </div>
+                  <h4 className="font-heading font-extrabold text-sm uppercase tracking-[0.05em]">
+                    {b.title}
+                  </h4>
+                  <p className="text-sm text-steel leading-relaxed">{b.desc}</p>
                 </div>
-                <h4 className="font-heading font-extrabold text-sm uppercase tracking-[0.05em]">
-                  {b.title}
-                </h4>
-                <p className="text-sm text-steel leading-relaxed">{b.desc}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </Container>
@@ -118,33 +124,43 @@ export default async function ProductPage({ params }: PageProps) {
       {/* Tabs: Description / Ingredients */}
       <Section>
         <Container narrow>
-          <ProductTabs product={product} />
+          <ScrollReveal>
+            <ProductTabs product={product} />
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* FAQ */}
       <Section variant="dim">
         <Container narrow>
-          <SectionHeader title="Common Questions" />
-          <Accordion items={FAQ_ITEMS} />
+          <ScrollReveal>
+            <SectionHeader title="Common Questions" />
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <Accordion items={FAQ_ITEMS} />
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* Cross-sell */}
       <Section>
         <Container>
-          <SectionHeader
-            label="Completes the Protocol"
-            title="Works Best With"
-          />
+          <ScrollReveal>
+            <SectionHeader
+              label="Completes the Protocol"
+              title="Works Best With"
+            />
+          </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {crossSell.map((p) => (
-              <ProductCard key={p.id} product={p} compact />
+            {crossSell.map((p, i) => (
+              <ScrollReveal key={p.id} delay={i * 120}>
+                <ProductCard product={p} compact />
+              </ScrollReveal>
             ))}
           </div>
         </Container>
       </Section>
-    </>
+    </ProductShell>
   );
 }
 
