@@ -10,7 +10,7 @@ import { PRODUCTS, getProductBySlug } from "@/lib/data";
 import ProductHero from "./ProductHero";
 import ProductTabsClient from "./ProductTabs";
 import ProductShell from "./ProductShell";
-import ScrollReveal from "./ScrollReveal";
+import ScrollReveal from "@/components/ScrollReveal";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

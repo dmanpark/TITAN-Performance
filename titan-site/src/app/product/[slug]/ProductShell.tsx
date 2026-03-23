@@ -1,30 +1,7 @@
 "use client";
 
-import {
-  useRef,
-  useEffect,
-  useState,
-  useCallback,
-  createContext,
-  useContext,
-  type ReactNode,
-} from "react";
-
-/* ── Mouse position context ─────────────────────────────── */
-
-interface MousePos {
-  /** normalised –1 → 1 */
-  nx: number;
-  ny: number;
-  /** raw pixel pos */
-  x: number;
-  y: number;
-}
-
-const MouseCtx = createContext<MousePos>({ nx: 0, ny: 0, x: 0, y: 0 });
-export const useMouse = () => useContext(MouseCtx);
-
-/* ── Background configs per product ─────────────────────── */
+import { useCallback, type ReactNode } from "react";
+import { MouseProvider, useMouse } from "@/lib/use-mouse";
 
 type ProductId = "foundation" | "prime" | "perform" | "fortify";
 
@@ -39,77 +16,17 @@ export default function ProductShell({
   accentColor,
   children,
 }: ShellProps) {
-  const [mouse, setMouse] = useState<MousePos>({
-    nx: 0,
-    ny: 0,
-    x: 0,
-    y: 0,
-  });
-  const smoothRef = useRef({ nx: 0, ny: 0 });
-  const rafRef = useRef<number>(0);
-  const rawRef = useRef({ nx: 0, ny: 0, x: 0, y: 0 });
-  const isMobile = useRef(false);
-
-  useEffect(() => {
-    isMobile.current = window.matchMedia("(pointer: coarse)").matches;
-    if (isMobile.current) return;
-
-    const onMove = (e: MouseEvent) => {
-      rawRef.current = {
-        nx: (e.clientX / window.innerWidth) * 2 - 1,
-        ny: (e.clientY / window.innerHeight) * 2 - 1,
-        x: e.clientX,
-        y: e.clientY,
-      };
-    };
-
-    window.addEventListener("mousemove", onMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
-  /* smooth damping at 60fps */
-  useEffect(() => {
-    if (isMobile.current) return;
-
-    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-    const loop = () => {
-      smoothRef.current.nx = lerp(
-        smoothRef.current.nx,
-        rawRef.current.nx,
-        0.06
-      );
-      smoothRef.current.ny = lerp(
-        smoothRef.current.ny,
-        rawRef.current.ny,
-        0.06
-      );
-      setMouse({
-        nx: smoothRef.current.nx,
-        ny: smoothRef.current.ny,
-        x: rawRef.current.x,
-        y: rawRef.current.y,
-      });
-      rafRef.current = requestAnimationFrame(loop);
-    };
-    rafRef.current = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, []);
-
   return (
-    <MouseCtx.Provider value={mouse}>
+    <MouseProvider>
       <div className="relative">
-        {/* Background layer */}
         <BackgroundLayer
           productId={productId as ProductId}
           accentColor={accentColor}
-          mouse={mouse}
         />
-        {/* Lighting overlay */}
-        <LightingOverlay mouse={mouse} />
-        {/* Content */}
+        <LightingOverlay />
         <div className="relative z-10">{children}</div>
       </div>
-    </MouseCtx.Provider>
+    </MouseProvider>
   );
 }
 
@@ -118,18 +35,17 @@ export default function ProductShell({
 function BackgroundLayer({
   productId,
   accentColor,
-  mouse,
 }: {
   productId: ProductId;
   accentColor: string;
-  mouse: MousePos;
 }) {
+  const mouse = useMouse();
+
   const bg = useCallback(() => {
-    const ox = mouse.nx * 15; // subtle offset in px
+    const ox = mouse.nx * 15;
     const oy = mouse.ny * 15;
 
     switch (productId) {
-      /* Foundation: subtle structural grid */
       case "foundation":
         return (
           <>
@@ -153,7 +69,6 @@ function BackgroundLayer({
           </>
         );
 
-      /* Prime: radial energy / compression */
       case "prime":
         return (
           <>
@@ -167,13 +82,11 @@ function BackgroundLayer({
               className="absolute inset-0 opacity-[0.025]"
               style={{
                 background: `radial-gradient(circle 250px at ${50 + mouse.nx * 12}% ${50 + mouse.ny * 12}%, #1B263B, transparent)`,
-                transition: "background 0.3s ease-out",
               }}
             />
           </>
         );
 
-      /* Perform: directional flow lines */
       case "perform":
         return (
           <>
@@ -199,7 +112,6 @@ function BackgroundLayer({
           </>
         );
 
-      /* Fortify: layered depth shadows */
       case "fortify":
         return (
           <>
@@ -235,7 +147,8 @@ function BackgroundLayer({
 
 /* ── Global lighting overlay ────────────────────────────── */
 
-function LightingOverlay({ mouse }: { mouse: MousePos }) {
+function LightingOverlay() {
+  const mouse = useMouse();
   return (
     <div
       className="fixed inset-0 z-[1] pointer-events-none"

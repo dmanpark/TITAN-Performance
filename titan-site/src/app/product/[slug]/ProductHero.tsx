@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import type { Product } from "@/lib/types";
 import ProductActions from "./ProductActions";
-import { useMouse } from "./ProductShell";
+import { useMouse } from "@/lib/use-mouse";
 
 interface ProductHeroProps {
   product: Product;

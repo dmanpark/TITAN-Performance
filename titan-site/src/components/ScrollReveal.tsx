@@ -6,7 +6,6 @@ interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  /** slide direction */
   from?: "bottom" | "left" | "right";
 }
 
