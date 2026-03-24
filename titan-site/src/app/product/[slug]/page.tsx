@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import Section from "@/components/Section";
 import Container from "@/components/Container";
-import SectionHeader from "@/components/SectionHeader";
 import Accordion from "@/components/Accordion";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, getProductBySlug } from "@/lib/data";
 import ProductHero from "./ProductHero";
-import ProductTabsClient from "./ProductTabs";
+import ProductStatsBar from "./ProductStatsBar";
+import ProductWhyItWorks from "./ProductWhyItWorks";
+import ProductWhenToUse from "./ProductWhenToUse";
+import ProductWhatsInside from "./ProductWhatsInside";
 import ProductShell from "./ProductShell";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -62,94 +62,54 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <ProductShell productId={product.id} accentColor={product.color}>
-      {/* Breadcrumb */}
-      <Section className="!pt-6 !pb-0">
-        <Container>
-          <nav
-            className="text-xs text-steel/60"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/" className="hover:text-navy transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href="/shop" className="hover:text-navy transition-colors">
-              Shop
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-navy font-semibold">{product.name}</span>
-          </nav>
-        </Container>
-      </Section>
 
-      {/* Product Detail */}
-      <Section className="!pt-8">
-        <Container>
-          <ProductHero product={product} />
-        </Container>
-      </Section>
+      {/* 1. Hero — dark split */}
+      <ProductHero product={product} />
 
-      {/* Benefits */}
-      <Section variant="dim">
-        <Container>
+      {/* 2. Stats bar */}
+      <ProductStatsBar product={product} />
+
+      {/* 3. Why it works */}
+      <ProductWhyItWorks product={product} />
+
+      {/* 4. When to use */}
+      <ProductWhenToUse product={product} />
+
+      {/* 5. What's inside */}
+      <ProductWhatsInside product={product} />
+
+      {/* 6. FAQ — dark */}
+      <section className="bg-[#0c1623] px-5 md:px-8 py-section">
+        <div className="max-w-[800px] mx-auto">
           <ScrollReveal>
-            <SectionHeader label="Why It Works" title="Key Benefits" />
-          </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {product.benefits.map((b, i) => (
-              <ScrollReveal key={b.title} delay={i * 100}>
-                <div className="flex flex-col gap-3 group/benefit">
-                  <div className="w-12 h-12 flex items-center justify-center bg-navy/5 mb-2 transition-all duration-300 group-hover/benefit:bg-navy/10 group-hover/benefit:scale-105">
-                    <svg
-                      width="24"
-                      height="24"
-                      fill="none"
-                      stroke="#1B263B"
-                      strokeWidth="2"
-                    >
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                  </div>
-                  <h4 className="font-heading font-extrabold text-sm uppercase tracking-[0.05em]">
-                    {b.title}
-                  </h4>
-                  <p className="text-sm text-steel leading-relaxed">{b.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Tabs: Description / Ingredients */}
-      <Section>
-        <Container narrow>
-          <ScrollReveal>
-            <ProductTabs product={product} />
-          </ScrollReveal>
-        </Container>
-      </Section>
-
-      {/* FAQ */}
-      <Section variant="dim">
-        <Container narrow>
-          <ScrollReveal>
-            <SectionHeader title="Common Questions" />
+            <div className="mb-12">
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25 block mb-4">
+                Questions
+              </span>
+              <h2 className="font-heading font-black text-[clamp(1.75rem,4vw,2.75rem)] text-white uppercase tracking-tight leading-none">
+                Common Questions
+              </h2>
+            </div>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <Accordion items={FAQ_ITEMS} />
+            <Accordion items={FAQ_ITEMS} dark />
           </ScrollReveal>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      {/* Cross-sell */}
-      <Section>
+      {/* 7. Cross-sell — light contrast break */}
+      <section className="bg-surface px-5 md:px-8 py-section">
         <Container>
           <ScrollReveal>
-            <SectionHeader
-              label="Completes the Protocol"
-              title="Works Best With"
-            />
+            <div className="mb-14">
+              <span className="block font-heading font-black text-[11px] tracking-[0.3em] uppercase mb-4 text-steel/60">
+                Completes the Protocol
+              </span>
+              <h2 className="font-heading font-black text-[clamp(2rem,4vw,3rem)] uppercase tracking-tight">
+                Works Best With
+              </h2>
+              <div className="w-[60px] h-1 mt-4 bg-navy" />
+            </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {crossSell.map((p, i) => (
@@ -159,11 +119,8 @@ export default async function ProductPage({ params }: PageProps) {
             ))}
           </div>
         </Container>
-      </Section>
+      </section>
+
     </ProductShell>
   );
-}
-
-function ProductTabs({ product }: { product: ReturnType<typeof getProductBySlug> & {} }) {
-  return <ProductTabsClient product={product} />;
 }

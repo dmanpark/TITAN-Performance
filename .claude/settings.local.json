@@ -22,7 +22,18 @@
       "Bash(pip install:*)",
       "Bash(find 'C:/Users/daria/TITAN Performance' -maxdepth 3 -name *transparent* -o -name *nobg* -o -name *no-bg* -o -name *_t.* -o -name *-t.*)",
       "Bash(find 'C:/Users/daria/TITAN Performance' -maxdepth 4 -name *.png -o -name *.webp -o -name *.jpg -o -name *.jpeg)",
-      "Bash(find 'C:/Users/daria/TITAN Performance/claude-seo' -type f -name *.png -o -name *.webp -o -name *.jpg)"
+      "Bash(find 'C:/Users/daria/TITAN Performance/claude-seo' -type f -name *.png -o -name *.webp -o -name *.jpg)",
+      "Bash(powershell.exe -Command \"cd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'; npm install 2>&1\" 2>&1)",
+      "Bash(powershell.exe -Command \"Start-Sleep 8; Get-Content 'C:\\\\Users\\\\night\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-night-TITAN-Performance-TITAN-Performance\\\\7faa2d80-42e5-4725-8844-021ae2f29929\\\\tasks\\\\b738ynvqa.output'\")",
+      "Bash(npx tsc:*)",
+      "Bash(cmd /c \"cd C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site && npx tsc --noEmit 2>&1\")",
+      "Bash(cmd /c \"cd /d C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site && npx tsc --noEmit 2>&1\")",
+      "Bash(cmd /c \"cd /d C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site && npx tsc --noEmit && echo TSC_PASS || echo TSC_FAIL\" 2>&1)",
+      "Bash(cmd /c \"cd /d C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site && npx next build 2>&1 | tail -20\")",
+      "Bash(powershell -Command \"Set-Location 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'; $result = npx tsc --noEmit 2>&1; Write-Output $result; if \\($LASTEXITCODE -eq 0\\) { Write-Output 'TSC_OK' } else { Write-Output 'TSC_ERRORS' }\")",
+      "Bash(powershell -NoProfile -Command \"cd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'; npx tsc --noEmit; if \\($LASTEXITCODE -eq 0\\) { 'TSC_OK' } else { 'TSC_ERRORS' }\")",
+      "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx tsc --noEmit\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)",
+      "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx next build 2>&1 | Select-Object -Last 30\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)"
     ]
   }
 }

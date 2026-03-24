@@ -3,6 +3,28 @@ export interface FlavorVariant {
   image: string;
 }
 
+export interface ProductStat {
+  label: string;
+  value: string;
+}
+
+export interface WhyItWorksItem {
+  index: string;
+  title: string;
+  desc: string;
+}
+
+export interface WhenToUseStep {
+  number: number;
+  instruction: string;
+}
+
+export interface FormulaRow {
+  dose: string;
+  compound: string;
+  function: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -19,6 +41,17 @@ export interface Product {
   color: string;
   image: string;
   variants?: FlavorVariant[];
+  heroFeatures?: string[];
+  stats?: ProductStat[];
+  whyItWorks?: WhyItWorksItem[];
+  whenToUse?: {
+    heading: string;
+    timing: string;
+    steps: WhenToUseStep[];
+    stackRole: string;
+    keyCompound: { name: string; dose: string; detail: string };
+  };
+  formula?: FormulaRow[];
 }
 
 export interface Benefit {
