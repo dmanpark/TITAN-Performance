@@ -42,7 +42,7 @@ export const PRODUCTS: Product[] = [
     ingredients:
       "Micronized Creatine Monohydrate (5g per serving). No additives. No fillers. No flavoring.",
     color: "#dde5dc",
-    image: "/assets/products/foundation_creatine.png",
+    image: "/assets/foundation_creatine.png",
     heroFeatures: [
       "5g micronized creatine monohydrate per serving",
       "No fillers, no flavoring — pure compound",
@@ -147,10 +147,10 @@ export const PRODUCTS: Product[] = [
     ingredients:
       "L-Citrulline (6g), Alpha-GPC (300mg), L-Tyrosine (1.5g), Caffeine Anhydrous (200mg), L-Theanine (100mg), Rhodiola Rosea (300mg), Beetroot Extract (500mg), BioPerine (5mg).",
     color: "#d7e2ff",
-    image: "/assets/products/prime_tropic.png",
+    image: "/assets/prime_tropic_surge.png",
     variants: [
-      { name: "Tropic Surge", image: "/assets/products/prime_tropic.png" },
-      { name: "Sakura Edge", image: "/assets/products/prime_sakura.png" },
+      { name: "Tropic Surge", image: "/assets/prime_tropic_surge.png" },
+      { name: "Sakura Edge", image: "/assets/prime_sakura_edge.png" },
     ],
     heroFeatures: [
       "No crash, no excessive stimulants",
@@ -293,7 +293,7 @@ export const PRODUCTS: Product[] = [
     ingredients:
       "Essential Amino Acids (10g, full spectrum), Cluster Dextrin (15g), Beta-Alanine (3.2g), Taurine (2g), Electrolyte Complex (sodium, potassium, magnesium), Coconut Water Powder (1g).",
     color: "#f2f4ef",
-    image: "/assets/products/perform_blue_razz.png",
+    image: "/assets/perform_blue_razz.png",
     heroFeatures: [
       "Full-spectrum essential amino acids",
       "Stable glycogen fuel — no insulin spike",
@@ -426,7 +426,7 @@ export const PRODUCTS: Product[] = [
     ingredients:
       "Collagen Peptides (10g), Magnesium Glycinate (400mg), Ashwagandha KSM-66 (600mg), Curcumin C3 Complex (500mg), Tart Cherry Extract (500mg), Glycine (3g), Zinc Picolinate (15mg), Vitamin C (250mg).",
     color: "#ebefe9",
-    image: "/assets/products/fortify_chocolate.png",
+    image: "/assets/fortify_chocolate.png",
     heroFeatures: [
       "Multi-system recovery architecture",
       "Sleep-phase optimization protocol",
