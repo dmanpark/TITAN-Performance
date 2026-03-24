@@ -45,7 +45,8 @@
       "Bash(pip show:*)",
       "Bash(powershell.exe -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site\\\\public' -Recurse | Select-Object FullName\")",
       "Bash(powershell.exe -Command \"python --version; pip show rembg 2>&1 | Select-String 'Name|Version'\")",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(powershell.exe -Command \"Copy-Item 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site\\\\public\\\\assets\\\\products\\\\perform_blue_razz.png' 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site\\\\public\\\\assets\\\\products\\\\perform_blue_razz_backup.png'; Write-Host 'Backup created'\")"
     ]
   }
 }
