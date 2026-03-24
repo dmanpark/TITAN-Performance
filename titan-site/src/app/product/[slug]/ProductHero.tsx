@@ -61,14 +61,24 @@ export default function ProductHero({ product }: ProductHeroProps) {
             transition: "transform 0.1s linear",
           }}
         >
-          {/* Ground shadow */}
+          {/* Ambient colour glow behind tub */}
           <div
             aria-hidden="true"
-            className="absolute bottom-[-6px] left-1/2 w-[60%] h-[20px] rounded-[50%] blur-[16px] bg-black/30"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `radial-gradient(ellipse 70% 55% at 50% 60%, ${product.color}22 0%, transparent 70%)`,
+            }}
+          />
+
+          {/* Ground contact shadow — shifts with cursor */}
+          <div
+            aria-hidden="true"
+            className="absolute bottom-[4%] left-1/2 w-[55%] h-[18px] rounded-[50%] blur-[18px] bg-black/50"
             style={{
               transform: `translateX(calc(-50% + ${sx * 0.4}px))`,
             }}
           />
+
           <Image
             key={currentImage}
             src={currentImage}
@@ -77,6 +87,10 @@ export default function ProductHero({ product }: ProductHeroProps) {
             height={440}
             priority
             className="max-w-[440px] w-full object-contain relative z-[1] animate-[heroFloat_6s_ease-in-out_infinite]"
+            style={{
+              filter:
+                "drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 6px 14px rgba(0,0,0,0.35))",
+            }}
           />
         </div>
 

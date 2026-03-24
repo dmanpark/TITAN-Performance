@@ -63,13 +63,14 @@ export default function CartDrawer() {
                     key={item.id}
                     className="flex gap-4 py-4 border-b border-navy/5"
                   >
-                    <div className="w-[72px] h-[72px] bg-container flex-shrink-0 flex items-center justify-center overflow-hidden">
+                    <div className="w-[72px] h-[72px] bg-surface-dim flex-shrink-0 flex items-center justify-center overflow-hidden p-1">
                       <Image
                         src={product.image}
                         alt={product.name}
                         width={72}
                         height={72}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
+                        style={{ filter: "drop-shadow(0 4px 8px rgba(27,38,59,0.15))" }}
                       />
                     </div>
                     <div className="flex-1 flex flex-col gap-1">

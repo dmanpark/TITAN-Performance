@@ -33,7 +33,15 @@
       "Bash(powershell -Command \"Set-Location 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'; $result = npx tsc --noEmit 2>&1; Write-Output $result; if \\($LASTEXITCODE -eq 0\\) { Write-Output 'TSC_OK' } else { Write-Output 'TSC_ERRORS' }\")",
       "Bash(powershell -NoProfile -Command \"cd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'; npx tsc --noEmit; if \\($LASTEXITCODE -eq 0\\) { 'TSC_OK' } else { 'TSC_ERRORS' }\")",
       "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx tsc --noEmit\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)",
-      "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx next build 2>&1 | Select-Object -Last 30\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)"
+      "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx next build 2>&1 | Select-Object -Last 30\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)",
+      "Bash(find /c/Users/night/TITAN-Performance/TITAN-Performance/titan-site/src -type f -name *.ts -o -name *.tsx)",
+      "Bash(powershell -NoProfile -File - << 'EOF'\npython --version\npython -c \"import rembg; print\\('rembg ok'\\)\" 2>&1\nEOF)",
+      "Bash(powershell -NoProfile -File - << 'EOF'\npython -m pip install rembg[gpu] 2>&1 | Select-Object -Last 5\nEOF)",
+      "Bash(powershell -NoProfile -File - << 'EOF'\npython -m pip install rembg 2>&1 | Select-Object -Last 8\nEOF)",
+      "Bash(powershell -NoProfile -File - << 'EOF'\npython -c \"import rembg; print\\('rembg version:', rembg.__version__\\)\"\nEOF)",
+      "Bash(powershell -NoProfile -Command \"python -c \\\\\"import rembg; print\\('rembg:', rembg.__version__\\)\\\\\"\" 2>&1)",
+      "Bash(powershell -NoProfile -Command \"python 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site\\\\scripts\\\\remove_bg.py'\" 2>&1)",
+      "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx next build 2>&1 | Select-Object -Last 25\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)"
     ]
   }
 }

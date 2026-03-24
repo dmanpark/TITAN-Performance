@@ -35,6 +35,9 @@ export default function ProductCard({
             width={320}
             height={320}
             className="w-full h-full object-contain group-hover:scale-[1.05] transition-transform duration-500 ease-out"
+            style={{
+              filter: "drop-shadow(0 12px 24px rgba(27,38,59,0.18)) drop-shadow(0 3px 8px rgba(27,38,59,0.10))",
+            }}
           />
         </div>
         <div className="flex flex-col gap-2 p-5 pb-4 flex-1">

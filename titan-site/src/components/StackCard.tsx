@@ -60,6 +60,11 @@ export default function StackCard({ stack }: StackCardProps) {
                 width={56}
                 height={56}
                 className="w-full h-full object-contain p-1"
+                style={{
+                  filter: featured
+                    ? "drop-shadow(0 4px 10px rgba(0,0,0,0.45))"
+                    : "drop-shadow(0 4px 8px rgba(27,38,59,0.18))",
+                }}
               />
             </div>
           );
