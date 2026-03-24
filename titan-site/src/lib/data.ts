@@ -14,138 +14,101 @@ export const PRODUCTS: Product[] = [
     category: "essentials",
     phase: "daily",
     price: 59,
-    tagline: "Daily Essential",
+    tagline: "Strength & Power Foundation",
     summary:
-      "Comprehensive micronutrient support for consistent performance. The base layer of the TITAN system.",
+      "Pure creatine monohydrate. The most researched performance compound in existence — standardized, unflavored, and dosed to build.",
     description:
-      "TITAN Foundation delivers a precision-dosed daily micronutrient complex designed to fill the gaps that even disciplined diets leave open. Built around bioavailable forms of essential vitamins, chelated minerals, and targeted co-factors that support metabolic function, immune resilience, and long-term structural integrity. This is the base layer — the non-negotiable starting point for any serious protocol.",
+      "TITAN Foundation is 100% pure micronized creatine monohydrate — nothing else. Creatine is the most extensively studied performance supplement in sports science, with decades of research confirming its ability to increase strength, power output, and lean muscle mass. By saturating phosphocreatine stores in muscle tissue, it accelerates ATP regeneration during high-intensity efforts. The result: more reps, heavier lifts, faster adaptation. No fluff. No stacking gimmicks. Just the compound that works.",
     benefits: [
       {
-        title: "Metabolic Support",
-        desc: "Optimized B-vitamin complex and zinc for energy metabolism and enzymatic function.",
+        title: "Strength & Power",
+        desc: "Increases phosphocreatine stores for rapid ATP resynthesis during maximal and near-maximal efforts.",
       },
       {
-        title: "Immune Resilience",
-        desc: "Vitamin D3, vitamin C, and selenium to maintain immune readiness under training stress.",
+        title: "Lean Muscle Mass",
+        desc: "Supports intramuscular water retention and protein synthesis signaling for measurable hypertrophy over time.",
       },
       {
-        title: "Structural Integrity",
-        desc: "Chelated magnesium and vitamin K2 for bone density and connective tissue maintenance.",
+        title: "Training Volume",
+        desc: "Delays fatigue on high-intensity sets, enabling more total work per session — the primary driver of adaptation.",
       },
       {
-        title: "Bioavailability",
-        desc: "Every ingredient in its most absorbable form. No oxide fillers. No cheap substitutes.",
+        title: "Cognitive Output",
+        desc: "Creatine phosphate supports brain energy metabolism. Improved focus and mental resilience under training load.",
       },
     ],
     usage:
-      "Take 3 capsules daily with your first meal. Consistent daily use recommended for cumulative benefit.",
+      "Mix 1 scoop (5g) with water, juice, or your preferred beverage. Take daily — timing is flexible. Consistency over weeks drives results.",
     ingredients:
-      "Vitamin D3 (5000 IU), Vitamin K2 (MK-7, 200mcg), Magnesium Bisglycinate (400mg), Zinc Picolinate (30mg), Selenium (200mcg), Vitamin C (500mg), B-Complex (methylated forms), BioPerine (10mg).",
+      "Micronized Creatine Monohydrate (5g per serving). No additives. No fillers. No flavoring.",
     color: "#dde5dc",
     image: "/assets/products/foundation_creatine.png",
     heroFeatures: [
-      "Zero oxide fillers — bioavailable forms only",
-      "Chelated minerals for maximum absorption",
-      "Designed for sustained daily use",
+      "5g micronized creatine monohydrate per serving",
+      "No fillers, no flavoring — pure compound",
+      "Backed by 40+ years of peer-reviewed research",
     ],
     stats: [
       { label: "Servings", value: "30" },
-      { label: "Daily Window", value: "AM / Meal" },
-      { label: "Vitamin D3", value: "5,000 IU" },
+      { label: "Timing", value: "Any Time Daily" },
+      { label: "Creatine", value: "5g" },
       { label: "Phase", value: "Daily" },
     ],
     whyItWorks: [
       {
         index: "01",
-        title: "Metabolic Support",
-        desc: "Optimized B-vitamin complex and zinc for energy metabolism and enzymatic function.",
+        title: "ATP Resynthesis",
+        desc: "Phosphocreatine donates a phosphate group to ADP, rapidly regenerating ATP during explosive and high-intensity efforts.",
       },
       {
         index: "02",
-        title: "Immune Resilience",
-        desc: "Vitamin D3, vitamin C, and selenium to maintain immune readiness under training stress.",
+        title: "Volumization",
+        desc: "Creatine draws water into muscle cells, increasing cell volume — a key anabolic signal for protein synthesis.",
       },
       {
         index: "03",
-        title: "Structural Integrity",
-        desc: "Chelated magnesium and vitamin K2 for bone density and connective tissue maintenance.",
+        title: "Satellite Cell Activation",
+        desc: "Creatine supplementation enhances satellite cell signaling, directly supporting muscle fiber repair and growth.",
       },
       {
         index: "04",
-        title: "Bioavailability",
-        desc: "Every ingredient in its most absorbable form. No oxide fillers. No cheap substitutes.",
+        title: "Cumulative Saturation",
+        desc: "Effects build over 2–4 weeks of daily use as intramuscular stores reach full saturation. Consistency is the mechanism.",
       },
     ],
     whenToUse: {
-      heading: "Daily Activation",
-      timing: "Morning Protocol",
+      heading: "Daily Loading",
+      timing: "Any Time — Consistency Is What Matters",
       steps: [
         {
           number: 1,
           instruction:
-            "Take 3 capsules with your first meal of the day.",
+            "Mix 1 scoop (5g) with 8–12oz of water or any beverage.",
         },
         {
           number: 2,
           instruction:
-            "No need to time around training — daily consistency is the mechanism.",
+            "Take daily — pre-training, post-training, or with a meal. Timing is secondary to consistency.",
         },
         {
           number: 3,
           instruction:
-            "Effects are cumulative. Do not skip. The protocol compounds over weeks.",
+            "Full saturation takes 2–4 weeks of daily use. Do not skip. The compound accumulates.",
         },
       ],
       stackRole: "Phase: Daily — Base Layer",
       keyCompound: {
-        name: "Magnesium Bisglycinate",
-        dose: "400mg",
+        name: "Micronized Creatine Monohydrate",
+        dose: "5g",
         detail:
-          "Most bioavailable form of magnesium. Full enzymatic support, sleep quality, and neuromuscular function.",
+          "Micronization increases surface area for faster dissolution and uptake. The most validated form — no ester, no HCl, no shortcuts.",
       },
     },
     formula: [
       {
-        dose: "5,000 IU",
-        compound: "Vitamin D3",
-        function: "Immune function, bone density, hormonal signaling",
-      },
-      {
-        dose: "200mcg",
-        compound: "Vitamin K2 (MK-7)",
-        function: "Calcium metabolism, cardiovascular protection",
-      },
-      {
-        dose: "400mg",
-        compound: "Magnesium Bisglycinate",
-        function:
-          "Sleep quality, neuromuscular function, 300+ enzymatic reactions",
-      },
-      {
-        dose: "30mg",
-        compound: "Zinc Picolinate",
-        function: "Testosterone support, immune defense, protein synthesis",
-      },
-      {
-        dose: "200mcg",
-        compound: "Selenium",
-        function: "Antioxidant defense, thyroid hormone metabolism",
-      },
-      {
-        dose: "500mg",
-        compound: "Vitamin C",
-        function:
-          "Collagen synthesis, immune resilience, oxidative stress buffer",
-      },
-      {
-        dose: "Methylated",
-        compound: "B-Complex (B2, B6, B9, B12)",
-        function: "Energy metabolism, red blood cell production, methylation",
-      },
-      {
-        dose: "10mg",
-        compound: "BioPerine",
-        function: "Bioavailability enhancement up to 20×",
+        dose: "5g",
+        compound: "Micronized Creatine Monohydrate",
+        function: "Phosphocreatine replenishment, ATP resynthesis, strength and power output",
       },
     ],
   },
