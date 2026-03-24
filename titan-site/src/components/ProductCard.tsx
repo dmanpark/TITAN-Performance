@@ -32,9 +32,9 @@ export default function ProductCard({
             key={currentImage}
             src={currentImage}
             alt={product.name}
-            width={800}
-            height={800}
-            className="w-full h-full object-contain group-hover:scale-[1.05] transition-transform duration-500 ease-out"
+            width={1200}
+            height={1200}
+            className="w-[120%] h-[120%] object-contain group-hover:scale-[1.05] transition-transform duration-500 ease-out"
             style={{
               filter: "drop-shadow(0 12px 24px rgba(27,38,59,0.18)) drop-shadow(0 3px 8px rgba(27,38,59,0.10))",
             }}
