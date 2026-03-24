@@ -27,7 +27,7 @@ export default function ProductCard({
         href={`/product/${product.slug}`}
         className="flex flex-col flex-1"
       >
-        <div className="h-60 overflow-hidden flex items-center justify-center bg-surface-dim">
+        <div className="h-60 overflow-hidden flex items-center justify-center bg-surface-dim border border-black/10">
           <Image
             key={currentImage}
             src={currentImage}
