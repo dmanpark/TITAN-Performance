@@ -55,7 +55,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
 
         {/* Product image with parallax */}
         <div
-          className="relative w-full max-w-[720px] aspect-square flex items-center justify-center z-10"
+          className="relative w-full max-w-[900px] aspect-square flex items-center justify-center z-10"
           style={{
             transform: `translate(${px}px, ${py}px)`,
             transition: "transform 0.1s linear",
@@ -83,10 +83,10 @@ export default function ProductHero({ product }: ProductHeroProps) {
             key={currentImage}
             src={currentImage}
             alt={product.name}
-            width={740}
-            height={740}
+            width={920}
+            height={920}
             priority
-            className="max-w-[740px] w-full object-contain relative z-[1] animate-[heroFloat_6s_ease-in-out_infinite]"
+            className="max-w-[920px] w-full object-contain relative z-[1] animate-[heroFloat_6s_ease-in-out_infinite]"
             style={{
               filter:
                 "drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 6px 14px rgba(0,0,0,0.35))",
