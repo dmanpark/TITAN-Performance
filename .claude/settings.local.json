@@ -42,7 +42,10 @@
       "Bash(powershell -NoProfile -Command \"python -c \\\\\"import rembg; print\\('rembg:', rembg.__version__\\)\\\\\"\" 2>&1)",
       "Bash(powershell -NoProfile -Command \"python 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site\\\\scripts\\\\remove_bg.py'\" 2>&1)",
       "Bash(powershell -NoProfile -File - << 'EOF'\ncd 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site'\nnpx next build 2>&1 | Select-Object -Last 25\nWrite-Host \"Exit: $LASTEXITCODE\"\nEOF)",
-      "Bash(pip show:*)"
+      "Bash(pip show:*)",
+      "Bash(powershell.exe -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\night\\\\TITAN-Performance\\\\TITAN-Performance\\\\titan-site\\\\public' -Recurse | Select-Object FullName\")",
+      "Bash(powershell.exe -Command \"python --version; pip show rembg 2>&1 | Select-String 'Name|Version'\")",
+      "Bash(dir:*)"
     ]
   }
 }
