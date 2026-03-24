@@ -27,14 +27,14 @@ export default function ProductCard({
         href={`/product/${product.slug}`}
         className="flex flex-col flex-1"
       >
-        <div className="aspect-square overflow-hidden flex items-center justify-center bg-surface-dim">
+        <div className="h-80 overflow-hidden flex items-center justify-center bg-surface-dim">
           <Image
             key={currentImage}
             src={currentImage}
             alt={product.name}
             width={1200}
             height={1200}
-            className="w-[120%] h-[120%] object-contain group-hover:scale-[1.05] transition-transform duration-500 ease-out"
+            className="w-full h-full object-contain scale-[1.3] group-hover:scale-[1.38] transition-transform duration-500 ease-out"
             style={{
               filter: "drop-shadow(0 12px 24px rgba(27,38,59,0.18)) drop-shadow(0 3px 8px rgba(27,38,59,0.10))",
             }}
