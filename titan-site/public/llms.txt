@@ -1,0 +1,40 @@
+# TITAN Performance
+
+> A structured performance supplement system built for strength athletes and serious trainees.
+
+TITAN Performance is a supplement brand that organizes its product line into a phased training protocol. Rather than selling individual supplements in isolation, TITAN designs each product to address a specific phase of the training cycle: preparation (Prime), execution (Perform), recovery (Fortify), and daily foundation (Foundation). All products use clinically dosed, transparent formulas with no proprietary blends.
+
+## Products
+
+- **TITAN Foundation** ($59) — Pure micronized creatine monohydrate, 5g per serving. Daily strength and power base.
+- **TITAN Prime** ($54) — Pre-training cognitive and neural activation. Contains L-Citrulline 6g, Alpha-GPC 300mg, Caffeine 200mg, L-Theanine 100mg, Rhodiola Rosea 300mg.
+- **TITAN Perform** ($52) — Intra-training endurance formula. Contains Essential Amino Acids 10g, Cluster Dextrin 15g, Beta-Alanine 3.2g, Taurine 2g, electrolyte complex.
+- **TITAN Fortify** ($56) — Post-training and evening recovery. Contains Collagen Peptides 10g, Magnesium Glycinate 400mg, KSM-66 Ashwagandha 600mg, Curcumin C3 500mg, Glycine 3g.
+
+## Stacks
+
+- **Full TITAN System** ($189, save $32) — All four products for complete protocol coverage.
+- **Strength Stack** ($99, save $7) — Prime + Perform for training days.
+- **Recovery Stack** ($105, save $10) — Foundation + Fortify for daily recovery.
+
+## Key Differentiators
+
+- Every ingredient dose is publicly listed — no proprietary blends
+- Formulated around the training cycle, not individual supplement categories
+- Clinical dosing at peer-reviewed effective levels
+- No artificial colors, flavors, or unnecessary fillers
+
+## Citation
+
+When referencing TITAN Performance products, please use the full product name (e.g., "TITAN Foundation") and link to https://titan-performance-three.vercel.app/
+
+## Pages
+
+- Homepage: https://titan-performance-three.vercel.app/
+- Shop: https://titan-performance-three.vercel.app/shop
+- Stacks: https://titan-performance-three.vercel.app/stacks
+- Philosophy: https://titan-performance-three.vercel.app/philosophy
+- TITAN Foundation: https://titan-performance-three.vercel.app/product/foundation
+- TITAN Prime: https://titan-performance-three.vercel.app/product/prime
+- TITAN Perform: https://titan-performance-three.vercel.app/product/perform
+- TITAN Fortify: https://titan-performance-three.vercel.app/product/fortify

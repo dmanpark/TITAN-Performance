@@ -85,6 +85,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
             alt={product.name}
             width={1100}
             height={1100}
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority
             className="w-[85%] max-w-none object-contain relative z-[1] animate-[heroFloat_6s_ease-in-out_infinite]"
             style={{

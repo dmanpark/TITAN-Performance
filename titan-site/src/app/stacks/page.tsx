@@ -8,9 +8,19 @@ import Button from "@/components/Button";
 import { STACKS, PRODUCTS } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Stacks",
+  title: "Supplement Stacks & Bundles",
   description:
-    "Build your TITAN stack. Curated supplement bundles for structured training protocols.",
+    "Save with curated TITAN supplement stacks. Full System ($189), Strength Stack ($99), and Recovery Stack ($105). Structured bundles for complete training protocols.",
+  openGraph: {
+    title: "Supplement Stacks & Bundles | TITAN Performance",
+    description:
+      "Save with curated supplement bundles. Structured stacks covering preparation, performance, and recovery.",
+    url: "https://titan-performance-three.vercel.app/stacks",
+    type: "website",
+  },
+  alternates: {
+    canonical: "/stacks",
+  },
 };
 
 const trainingCycle = [

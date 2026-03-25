@@ -34,6 +34,7 @@ export default function ProductCard({
             alt={product.name}
             width={1200}
             height={1200}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="h-[85%] w-auto object-contain scale-[1.0] group-hover:scale-[1.08] transition-transform duration-500 ease-out"
             style={{
               filter: "drop-shadow(0 12px 24px rgba(27,38,59,0.18)) drop-shadow(0 3px 8px rgba(27,38,59,0.10)) brightness(1.1) contrast(1.08)",

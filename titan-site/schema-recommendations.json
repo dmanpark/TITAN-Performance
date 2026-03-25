@@ -1,0 +1,337 @@
+{
+  "_comment": "TITAN Performance - Recommended JSON-LD Schema Markup",
+  "_audit_date": "2026-03-24",
+  "_site": "https://titan-performance-three.vercel.app",
+
+  "1_organization_layout_level": {
+    "_placement": "src/app/layout.tsx - inject in <head> via <script type='application/ld+json'>",
+    "_scope": "Site-wide, rendered once in root layout",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://titan-performance-three.vercel.app/#organization",
+      "name": "TITAN Performance",
+      "url": "https://titan-performance-three.vercel.app",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://titan-performance-three.vercel.app/assets/logo.png"
+      },
+      "description": "A performance supplement system built for strength, not hype. Precision-formulated supplements for structured training protocols.",
+      "brand": {
+        "@type": "Brand",
+        "name": "TITAN Performance"
+      }
+    }
+  },
+
+  "2_website_layout_level": {
+    "_placement": "src/app/layout.tsx - inject in <head> alongside Organization",
+    "_scope": "Site-wide, rendered once in root layout",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://titan-performance-three.vercel.app/#website",
+      "name": "TITAN Performance",
+      "url": "https://titan-performance-three.vercel.app",
+      "publisher": {
+        "@id": "https://titan-performance-three.vercel.app/#organization"
+      }
+    }
+  },
+
+  "3_homepage": {
+    "_placement": "src/app/page.tsx",
+    "_scope": "Homepage only",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://titan-performance-three.vercel.app/#webpage",
+      "name": "TITAN Performance | Architectural Strength",
+      "url": "https://titan-performance-three.vercel.app",
+      "description": "A performance supplement system built for strength, not hype. Prime. Perform. Fortify.",
+      "isPartOf": {
+        "@id": "https://titan-performance-three.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://titan-performance-three.vercel.app/#organization"
+      }
+    }
+  },
+
+  "4_shop_page": {
+    "_placement": "src/app/shop/page.tsx",
+    "_scope": "/shop page",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Shop the System",
+        "url": "https://titan-performance-three.vercel.app/shop",
+        "description": "Browse the complete TITAN Performance supplement system. Precision-formulated for strength, focus, and recovery.",
+        "isPartOf": {
+          "@id": "https://titan-performance-three.vercel.app/#website"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://titan-performance-three.vercel.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Shop"
+          }
+        ]
+      }
+    ]
+  },
+
+  "5_stacks_page": {
+    "_placement": "src/app/stacks/page.tsx",
+    "_scope": "/stacks page",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://titan-performance-three.vercel.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Stacks"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Strength Stack",
+        "description": "Prime + Perform. Everything you need to train with focus and sustained output.",
+        "url": "https://titan-performance-three.vercel.app/stacks",
+        "brand": {
+          "@type": "Brand",
+          "name": "TITAN Performance"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "99.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Full TITAN System",
+        "description": "Foundation + Prime + Perform + Fortify. The definitive performance protocol. Prepare, perform, recover, build.",
+        "url": "https://titan-performance-three.vercel.app/stacks",
+        "brand": {
+          "@type": "Brand",
+          "name": "TITAN Performance"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "189.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Recovery Stack",
+        "description": "Foundation + Fortify. The structural base for consistent recovery and long-term adaptation.",
+        "url": "https://titan-performance-three.vercel.app/stacks",
+        "brand": {
+          "@type": "Brand",
+          "name": "TITAN Performance"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "105.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31"
+        }
+      }
+    ]
+  },
+
+  "6_philosophy_page": {
+    "_placement": "src/app/philosophy/page.tsx",
+    "_scope": "/philosophy page",
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://titan-performance-three.vercel.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Philosophy"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Philosophy | TITAN Performance",
+        "url": "https://titan-performance-three.vercel.app/philosophy",
+        "description": "The TITAN Performance philosophy. Strength is built through discipline, structure, and intent.",
+        "isPartOf": {
+          "@id": "https://titan-performance-three.vercel.app/#website"
+        }
+      }
+    ]
+  },
+
+  "7_product_pages_dynamic": {
+    "_placement": "src/app/product/[slug]/page.tsx - generated dynamically per product",
+    "_scope": "Each /product/[slug] page",
+    "_note": "Below are the four concrete product schemas. In code, generate dynamically from the PRODUCTS data array.",
+
+    "product_foundation": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "TITAN Foundation",
+      "url": "https://titan-performance-three.vercel.app/product/foundation",
+      "image": "https://titan-performance-three.vercel.app/assets/foundation_creatine.png",
+      "description": "Pure creatine monohydrate. The most researched performance compound in existence — standardized, unflavored, and dosed to build.",
+      "brand": {
+        "@type": "Brand",
+        "name": "TITAN Performance"
+      },
+      "category": "Dietary Supplements > Creatine",
+      "offers": {
+        "@type": "Offer",
+        "price": "59.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://titan-performance-three.vercel.app/product/foundation",
+        "priceValidUntil": "2026-12-31",
+        "seller": {
+          "@id": "https://titan-performance-three.vercel.app/#organization"
+        }
+      }
+    },
+
+    "product_prime": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "TITAN Prime",
+      "url": "https://titan-performance-three.vercel.app/product/prime",
+      "image": "https://titan-performance-three.vercel.app/assets/prime_tropic_surge.png",
+      "description": "Prepare your body and mind. Activation, focus, and cognitive readiness for the work ahead.",
+      "brand": {
+        "@type": "Brand",
+        "name": "TITAN Performance"
+      },
+      "category": "Dietary Supplements > Pre-Workout",
+      "offers": {
+        "@type": "Offer",
+        "price": "54.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://titan-performance-three.vercel.app/product/prime",
+        "priceValidUntil": "2026-12-31",
+        "seller": {
+          "@id": "https://titan-performance-three.vercel.app/#organization"
+        }
+      }
+    },
+
+    "product_perform": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "TITAN Perform",
+      "url": "https://titan-performance-three.vercel.app/product/perform",
+      "image": "https://titan-performance-three.vercel.app/assets/perform_blue_razz.png",
+      "description": "Train at full capacity. Endurance, output, and metabolic stability during high-intensity work.",
+      "brand": {
+        "@type": "Brand",
+        "name": "TITAN Performance"
+      },
+      "category": "Dietary Supplements > Intra-Workout",
+      "offers": {
+        "@type": "Offer",
+        "price": "52.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://titan-performance-three.vercel.app/product/perform",
+        "priceValidUntil": "2026-12-31",
+        "seller": {
+          "@id": "https://titan-performance-three.vercel.app/#organization"
+        }
+      }
+    },
+
+    "product_fortify": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "TITAN Fortify",
+      "url": "https://titan-performance-three.vercel.app/product/fortify",
+      "image": "https://titan-performance-three.vercel.app/assets/fortify_chocolate.png",
+      "description": "Build what lasts. Recovery, cellular growth, and long-term structural adaptation.",
+      "brand": {
+        "@type": "Brand",
+        "name": "TITAN Performance"
+      },
+      "category": "Dietary Supplements > Recovery",
+      "offers": {
+        "@type": "Offer",
+        "price": "56.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://titan-performance-three.vercel.app/product/fortify",
+        "priceValidUntil": "2026-12-31",
+        "seller": {
+          "@id": "https://titan-performance-three.vercel.app/#organization"
+        }
+      }
+    },
+
+    "breadcrumb_product_template": {
+      "_note": "Use this pattern for each product page. Replace [name] and [slug] dynamically.",
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://titan-performance-three.vercel.app"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Shop",
+          "item": "https://titan-performance-three.vercel.app/shop"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "[Product Name]"
+        }
+      ]
+    }
+  }
+}

@@ -27,6 +27,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: product.name,
     description: product.summary,
+    openGraph: {
+      title: `${product.name} | TITAN Performance`,
+      description: product.summary,
+      url: `https://titan-performance-three.vercel.app/product/${product.slug}`,
+      images: [
+        {
+          url: product.image,
+          width: 1200,
+          height: 1200,
+          alt: product.name,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.summary,
+      images: [product.image],
+    },
+    alternates: {
+      canonical: `/product/${product.slug}`,
+    },
   };
 }
 
@@ -60,8 +83,78 @@ export default async function ProductPage({ params }: PageProps) {
 
   const crossSell = PRODUCTS.filter((p) => p.id !== product.id).slice(0, 3);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description || product.summary,
+    image: `https://titan-performance-three.vercel.app${product.image}`,
+    brand: {
+      "@type": "Brand",
+      name: "TITAN Performance",
+    },
+    offers: {
+      "@type": "Offer",
+      price: product.price.toFixed(2),
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: `https://titan-performance-three.vercel.app/product/${product.slug}`,
+    },
+    category: product.category,
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://titan-performance-three.vercel.app",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Shop",
+        item: "https://titan-performance-three.vercel.app/shop",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `https://titan-performance-three.vercel.app/product/${product.slug}`,
+      },
+    ],
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <ProductShell productId={product.id} accentColor={product.color}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       {/* 1. Hero — dark split */}
       <ProductHero product={product} />

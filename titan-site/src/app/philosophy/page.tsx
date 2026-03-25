@@ -5,9 +5,19 @@ import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Philosophy",
+  title: "Our Philosophy",
   description:
-    "The TITAN Performance philosophy. Strength is built through discipline, structure, and intent.",
+    "The TITAN Performance philosophy: clinical dosing, transparent formulas, no proprietary blends. Every ingredient is evidence-based and dosed at effective levels.",
+  openGraph: {
+    title: "Our Philosophy | TITAN Performance",
+    description:
+      "Strength is built through discipline, structure, and intent. Learn the principles behind TITAN's evidence-based supplement formulations.",
+    url: "https://titan-performance-three.vercel.app/philosophy",
+    type: "website",
+  },
+  alternates: {
+    canonical: "/philosophy",
+  },
 };
 
 const values = [

@@ -6,9 +6,19 @@ import Button from "@/components/Button";
 import ShopGrid from "./ShopGrid";
 
 export const metadata: Metadata = {
-  title: "Shop",
+  title: "Shop All Supplements",
   description:
-    "Browse the complete TITAN Performance supplement system. Precision-formulated for strength, focus, and recovery.",
+    "Browse the complete TITAN Performance supplement system. Clinically dosed pre-workout, intra-workout, creatine, and recovery formulas. No proprietary blends.",
+  openGraph: {
+    title: "Shop All Supplements | TITAN Performance",
+    description:
+      "Browse the complete TITAN Performance supplement system. Clinically dosed formulas for every phase of the training cycle.",
+    url: "https://titan-performance-three.vercel.app/shop",
+    type: "website",
+  },
+  alternates: {
+    canonical: "/shop",
+  },
 };
 
 export default function ShopPage() {
